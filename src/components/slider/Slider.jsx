@@ -7,13 +7,13 @@ const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const data = [
-  "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/3771675/pexels-photo-3771675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/13627969/pexels-photo-13627969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/13155751/pexels-photo-13155751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  "https://images.pexels.com/photos/5355010/pexels-photo-5355010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/3771675/pexels-photo-3771675.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/13627969/pexels-photo-13627969.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/13155751/pexels-photo-13155751.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2",
+  "https://images.pexels.com/photos/5355010/pexels-photo-5355010.jpeg?auto=compress&cs=tinysrgb&w=1600&h=750&dpr=2"
   ];
 
   const prevSlide = () => {
