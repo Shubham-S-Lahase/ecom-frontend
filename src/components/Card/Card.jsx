@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 
 const Card = ({item}) => {
   // console.log(item);
-  let imgUrl = item.attributes?.imgOne?.data?.attributes?.url;
+  let img1Url = item.attributes?.imgOne?.data?.attributes?.url;
   let img2Url = item.attributes?.imgTwo?.data?.attributes?.url;
-  let imgSrc = `http://localhost:1337${imgUrl}`;
+  let img1Src = `http://localhost:1337${img1Url}`;
   let img2Src = `http://localhost:1337${img2Url}`;
     return(
       <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
         <div className="image">
             {item?.attributes.isNew && <span>New Season</span>}
-            <img src={imgSrc} alt="" className="mainImg" />
+            <img src={img1Src} alt="" className="mainImg" />
             <img src={img2Src} alt="" className="secondImg" />
         </div>
         <h2>{item?.attributes.title}</h2>
