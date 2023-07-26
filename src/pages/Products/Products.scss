@@ -26,12 +26,20 @@
     
     .right {
       flex: 3;
-  
-      .catImg{
+      .imgContainer{
+        background: url("https://media.giphy.com/media/gKH5Tia3vony6WpFAR/giphy.gif");
+        background-size:contain;
         width: 100%;
-        height: 300px;
-        object-fit: cover;
+        max-height: 300px;
         margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .catImg{
+          width: 350px;
+          max-height: 300px;
+        }
       }
     }
   }

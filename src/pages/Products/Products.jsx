@@ -7,14 +7,31 @@ import useFetch from "../../hooks/useFetch";
 const Products = () => {
   const catId = parseInt(useParams().id);
   // console.log(catId);
- 
+
   const [maxPrice, setMaxPrice] = useState(5000);
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
-  const { data, loading, error } = useFetch(`/sub-categories?[filters][categories][id][$eq]=${catId}`);
-  // console.log(data);
+  //for getting all subcategories under the category(catId)
+  const {
+    data: data1,
+    loading: loading1,
+    error: error1,
+  } = useFetch(`/sub-categories?[filters][categories][id][$eq]=${catId}`);
+  // console.log(data1);
 
+  //for getting the image of category(catId)
+  const {
+    data: data2,
+    loading: loading2,
+    error: error2,
+  } = useFetch(`/categories?populate=*&[filters][id][$eq]=${catId}`);
+  console.log(data2);
+
+  let imgUrl = data2
+    ? data2[0].attributes.img.data.attributes.url
+    : "Loading Image";
+  let imgSrc = `http://localhost:1337${imgUrl}`;
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -34,7 +51,7 @@ const Products = () => {
       <div className="left">
         <div className="filterItem">
           <h2>Product Categories</h2>
-          {data?.map((item) => (
+          {data1?.map((item) => (
             <div className="inputItem" key={item.id}>
               <input
                 type="checkbox"
@@ -84,12 +101,16 @@ const Products = () => {
         </div>
       </div>
       <div className="right">
-        <img
-          className="catImg"
-          src="https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt=""
+        <div className="imgContainer">
+          <img className="catImg" src={imgSrc} alt="" />
+        </div>
+        ontainer
+        <List
+          catId={catId}
+          maxPrice={maxPrice}
+          sort={sort}
+          subCats={selectedSubCats}
         />
-        <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
       </div>
     </div>
   );
